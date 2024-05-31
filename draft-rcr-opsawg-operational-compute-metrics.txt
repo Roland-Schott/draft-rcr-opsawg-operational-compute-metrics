@@ -5,12 +5,12 @@
 Network Working Group                                     S. Randriamasy
 Internet-Draft                                           Nokia Bell Labs
 Intended status: Informational                           L. M. Contreras
-Expires: 22 November 2024                                     Telefonica
+Expires: 2 December 2024                                      Telefonica
                                                            J. Ros-Giralt
                                                    Qualcomm Europe, Inc.
                                                                R. Schott
                                                         Deutsche Telekom
-                                                             21 May 2024
+                                                             31 May 2024
 
 
  Joint Exposure of Network and Compute Information for Infrastructure-
@@ -61,7 +61,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 22 November 2024.
+   This Internet-Draft will expire on 2 December 2024.
 
 Copyright Notice
 
@@ -142,9 +142,9 @@ Table of Contents
    providers and bodies that are specifying them.  However, distributed
    computational resources often run different implementations with
    different understandings and representations of compute capabilities,
-   which poses a challenge to the applicaiton placement and service
+   which poses a challenge to the application placement and service
    selection problems.  While standardization efforts on network
-   capabilities representation and exposure are well-advanced, similar
+   capabilities representation and exposure are well advanced, similar
    efforts on compute capabilitites are in their infancy.
 
    This document proposes an initial approach towards a common
@@ -165,8 +165,8 @@ Table of Contents
 3.  Problem Space and Needs
 
    Visibility and exposure of both (1) network and (2) compute resources
-   to the application is critical to enable the proper functioning of
-   the new class of services arising at the edge (e.g., distributed AI,
+   to the application is critical to enable a proper functioning of the
+   new class of services arising at the edge (e.g., distributed AI,
    driverless vehicles, AR/VR, etc.).  To understand the problem space
    and the capabilities that are lacking in today's protocol interfaces
    needed to enable these new services, we focus on the life cycle of a
@@ -175,11 +175,12 @@ Table of Contents
    At the edge, compute nodes are deployed near communication nodes
    (e.g., co-located in a 5G base station) to provide computing services
    that are close to users with the goal to (1) reduce latency, (2)
-   increase communication bandwidth, (3) enable privacy/personalization
-   (e.g., federated AI learning), and (4) reduce cloud costs and energy.
-   Services are deployed on the communication and compute infrastructure
-   through a two-phase life cycle that involves first a service
-   _deployment stage_ and then a _service selection_ stage (Figure 1).
+   increase communication bandwidth, (3) increase reliability, (4)
+   enable privacy nd security, (5) enable personalization, and (6)
+   reduce cloud costs and energy consumption.  Services are deployed on
+   the communication and compute infrastructure through a two-phase life
+   cycle that involves first a service _deployment stage_ and then a
+   _service selection_ stage (Figure 1).
 
     +-------------+      +--------------+      +-------------+
     |             |      |              |      |             |
@@ -191,23 +192,24 @@ Table of Contents
                        Figure 1: Service life cycle.
 
    *Service deployment.* This phase is carried out by the service
-   provider, and consists in the deployment of a new service (e.g., a
+   provider and involves the deployment of a new service (e.g., a
    distributed AI training/inference, an XR/AR service, etc.) on the
    communication and compute infrastructure.  The service provider needs
    to properly size the amount of communication and compute resources
    assigned to this new service to meet the expected user demand.  The
    decision on where the service is deployed and how many resources are
-   requested from the infrastructure depends on the levels of QoE that
-   the provider wants to guarantee to the user base.  To make a proper
-   deployment decision, the provider must have visibility on the
-   resources available from the infrastructure, including communication
-   resources (e.g., latency and bandwidth) and compute (e.g., CPU, GPU,
-   memory, storage).  For instance, to run a Large Language Model (LLM)
-   with 175 billion parameters, a total aggregated memory of 400GB and 8
-   GPUs are needed.  The service provider needs an interface to query
-   the infrastructure, extract the available compute and communication
-   resources, and decide which subset of resources are needed to run the
-   service.
+   requested from the infrastructure depends on the levels of Quality of
+   Experience (QoE) that the provider wants to guarantee to the users of
+   the service.  To make a proper deployment decision, the provider must
+   have visibility on the resources available within the infrastructure,
+   including communication (e.g., link bandwidth and latency) and
+   compute (e.g., CPU, GPU, memory and storage capacity) resources.  For
+   instance, to run a Large Language Model (LLM) with 175 billion
+   parameters, a total aggregated memory of 350GB and 5 GPUs may be
+   needed [LLM_COMP_REQ].  The service provider needs an interface to
+   query the infrastructure, extract the available compute and
+   communication resources, and decide which subset of resources are
+   needed to run the service.
 
    *Service selection.* This phase is initiated by the user, through a
    client application that connects to the deployed service.  There are
@@ -881,6 +883,10 @@ Table of Contents
 
    [LF-EDGE]  "Linux Foundation Edge", https://www.lfedge.org/ , March
               2023.
+
+   [LLM_COMP_REQ]
+              "Serving OPT-175B, BLOOM-176B and CodeGen-16B using Alpa",
+              n.d., <https://alpa.ai/tutorials/opt_serving.html>.
 
    [NFV-INF]  "ETSI GS NFV-INF 010, v1.1.1, Service Quality Metrics", 1
               December 2014, <https://www.etsi.org/deliver/etsi_gs/NFV-

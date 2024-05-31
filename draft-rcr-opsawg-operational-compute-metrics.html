@@ -1043,7 +1043,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Randriamasy, et al.</td>
-<td class="center">Expires 22 November 2024</td>
+<td class="center">Expires 2 December 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1056,12 +1056,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-rcr-opsawg-operational-compute-metrics-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-05-21" class="published">21 May 2024</time>
+<time datetime="2024-05-31" class="published">31 May 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-11-22">22 November 2024</time></dd>
+<dd class="expires"><time datetime="2024-12-02">2 December 2024</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1127,7 +1127,7 @@ common exposure scheme for metrics reflecting compute and communication capabili
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 22 November 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 2 December 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1293,9 +1293,9 @@ of utmost importance in the last decade. The availability of such information
 is taken for granted by the numerous service providers and bodies that are specifying them.
 However, distributed computational resources often run different
 implementations with different understandings and representations of
-compute capabilities, which poses a challenge to the applicaiton placement
+compute capabilities, which poses a challenge to the application placement
 and service selection problems. While standardization
-efforts on network capabilities representation and exposure are well-advanced,
+efforts on network capabilities representation and exposure are well advanced,
 similar efforts on compute capabilitites are in their infancy.<a href="#section-1-3" class="pilcrow">¶</a></p>
 <p id="section-1-4">This document proposes an initial approach towards  a common understanding
 and exposure scheme for metrics reflecting compute capabilities.
@@ -1321,7 +1321,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
       </h2>
 <p id="section-3-1">Visibility and exposure of both (1) network and (2) compute
 resources to the application is critical to
-enable the proper functioning of the new class of services
+enable a proper functioning of the new class of services
 arising at the edge (e.g., distributed AI, driverless vehicles,
 AR/VR, etc.). To understand the problem space and the capabilities
 that are lacking in today's protocol interfaces needed to enable
@@ -1331,9 +1331,9 @@ a service.<a href="#section-3-1" class="pilcrow">¶</a></p>
 are deployed near communication nodes (e.g., co-located
 in a 5G base station) to provide computing services that are
 close to users with the goal to (1) reduce latency, (2) increase
-communication bandwidth, (3) enable privacy/personalization
-(e.g., federated AI learning), and (4) reduce cloud costs and
-energy. Services are deployed on the communication and compute
+communication bandwidth, (3) increase reliability, (4) enable privacy
+nd security, (5) enable personalization, and (6) reduce cloud costs and
+energy consumption. Services are deployed on the communication and compute
 infrastructure through a two-phase life cycle that involves first a
 service <em>deployment stage</em> and then a <em>service selection</em> stage
 (<a href="#lifecycle" class="auto internal xref">Figure 1</a>).<a href="#section-3-2" class="pilcrow">¶</a></p>
@@ -1354,20 +1354,23 @@ service <em>deployment stage</em> and then a <em>service selection</em> stage
         </figcaption></figure>
 </div>
 <p id="section-3-4"><strong>Service deployment.</strong> This phase is carried out by the service
-provider, and consists in the deployment of a new service
+provider and involves the deployment of a new service
 (e.g., a distributed AI training/inference, an XR/AR service, etc.)
 on the communication and compute infrastructure. The service
 provider needs to properly size the amount of communication and compute
 resources assigned to this new service to meet the expected user
 demand. The decision on where the service is deployed and how
 many resources are requested from the infrastructure depends on
-the levels of QoE that the provider wants to guarantee to the
-user base. To make a proper deployment decision, the provider
-must have visibility on the resources available from
-the infrastructure, including communication resources (e.g., latency and
-bandwidth) and compute (e.g., CPU, GPU, memory, storage). For instance,
+the levels of Quality of Experience (QoE)
+that the provider wants to guarantee to the
+users of the service. To make a proper deployment decision, the provider
+must have visibility on the resources available within
+the infrastructure, including communication (e.g., link
+bandwidth and latency) and compute
+(e.g., CPU, GPU, memory and storage capacity) resources. For instance,
 to run a Large Language Model (LLM) with 175 billion parameters, a total
-aggregated memory of 400GB and 8 GPUs are needed. The service provider needs
+aggregated memory of 350GB and 5 GPUs may be needed <span>[<a href="#LLM_COMP_REQ" class="cite xref">LLM_COMP_REQ</a>]</span>.
+The service provider needs
 an interface to query the infrastructure, extract the available compute
 and communication resources, and decide which subset of resources are
 needed to run the service.<a href="#section-3-4" class="pilcrow">¶</a></p>
@@ -2078,6 +2081,10 @@ service placement or selection.<a href="#section-8-4" class="pilcrow">¶</a></p>
 <dt id="LF-EDGE">[LF-EDGE]</dt>
         <dd>
 <span class="refTitle">"Linux Foundation Edge"</span>, <span class="seriesInfo">https://www.lfedge.org/ </span>, <time datetime="2023-03" class="refDate">March 2023</time>. </dd>
+<dd class="break"></dd>
+<dt id="LLM_COMP_REQ">[LLM_COMP_REQ]</dt>
+        <dd>
+<span class="refTitle">"Serving OPT-175B, BLOOM-176B and CodeGen-16B using Alpa"</span>, <span>n.d.</span>, <span>&lt;<a href="https://alpa.ai/tutorials/opt_serving.html">https://alpa.ai/tutorials/opt_serving.html</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="NFV-INF">[NFV-INF]</dt>
         <dd>
