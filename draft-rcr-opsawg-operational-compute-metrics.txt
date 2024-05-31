@@ -392,7 +392,7 @@ Table of Contents
    information related to communication.  Leveraging such combination
    enables the possibility of resource and workload placement
    optimization, leading to both operational cost reductions to the
-   operator and service provider as well as an improvement on the
+   operator and service provider, as well as an improvement on the
    service level experienced by the end users.
 
 5.1.  Producers of Compute-Related Information
