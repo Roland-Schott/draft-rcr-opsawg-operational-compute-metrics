@@ -21,25 +21,24 @@ Further, this information is used by numerous use cases with different
 interpretations. This document proposes an initial approach towards a
 common exposure scheme for metrics reflecting compute and communication capabilities. 
     " name="description">
-<meta content="xml2rfc 3.21.0" name="generator">
+<meta content="xml2rfc 3.22.0" name="generator">
 <meta content="next generation" name="keyword">
 <meta content="unicorn" name="keyword">
 <meta content="sparkling distributed ledger" name="keyword">
 <meta content="draft-rcr-opsawg-operational-compute-metrics-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.21.0
-    Python 3.11.9
+  xml2rfc 3.22.0
+    Python 3.12.3
     ConfigArgParse 1.7
     google-i18n-address 3.1.0
     intervaltree 3.1.0
-    Jinja2 3.1.2
-    lxml 4.9.3
-    platformdirs 4.2.1
+    Jinja2 3.1.4
+    lxml 4.9.4
+    platformdirs 4.2.2
     pycountry 22.3.5
     PyYAML 6.0.1
-    requests 2.31.0
-    setuptools 68.2.2
-    six 1.16.0
+    requests 2.32.3
+    setuptools 69.5.1
     wcwidth 0.2.13
 -->
 <link href="draft-rcr-opsawg-operational-compute-metrics.xml" rel="alternate" type="application/rfc+xml">
@@ -1039,11 +1038,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">TODO - Abbreviation</td>
-<td class="right">May 2024</td>
+<td class="right">July 2024</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Randriamasy, et al.</td>
-<td class="center">Expires 2 December 2024</td>
+<td class="center">Expires 4 January 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1056,12 +1055,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-rcr-opsawg-operational-compute-metrics-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-05-31" class="published">31 May 2024</time>
+<time datetime="2024-07-03" class="published">3 July 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-12-02">2 December 2024</time></dd>
+<dd class="expires"><time datetime="2025-01-04">4 January 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1127,7 +1126,7 @@ common exposure scheme for metrics reflecting compute and communication capabili
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 2 December 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 4 January 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1228,36 +1227,47 @@ common exposure scheme for metrics reflecting compute and communication capabili
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-related-work" class="internal xref">Related Work</a></p>
-</li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
-            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-guiding-principles" class="internal xref">Guiding Principles</a></p>
-</li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
-            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-gap-analysis" class="internal xref">GAP Analysis</a></p>
-</li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
-            <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
-</li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
-            <p id="section-toc.1-1.11.1"><a href="#section-11" class="auto internal xref">11</a>. <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
-</li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12">
-            <p id="section-toc.1-1.12.1"><a href="#section-12" class="auto internal xref">12</a>. <a href="#name-references" class="internal xref">References</a></p>
+            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-study-of-the-kubernetes-met" class="internal xref">Study of the Kubernetes Metrics API and Exposure Mechanism</a></p>
 <ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12.2.1">
-                <p id="section-toc.1-1.12.2.1.1"><a href="#section-12.1" class="auto internal xref">12.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.1">
+                <p id="section-toc.1-1.7.2.1.1"><a href="#section-7.1" class="auto internal xref">7.1</a>.  <a href="#name-understanding-the-kubernete" class="internal xref">Understanding the Kubernetes Metric API and its Exposure Mechanism</a></p>
 </li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12.2.2">
-                <p id="section-toc.1-1.12.2.2.1"><a href="#section-12.2" class="auto internal xref">12.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.2">
+                <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="auto internal xref">7.2</a>.  <a href="#name-mapping-the-kubernetes-metr" class="internal xref">Mapping the Kubernetes Metrics API and the CATS Architectures</a></p>
 </li>
             </ul>
 </li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
+            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-related-work" class="internal xref">Related Work</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
+            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-guiding-principles" class="internal xref">Guiding Principles</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
+            <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-gap-analysis" class="internal xref">GAP Analysis</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
+            <p id="section-toc.1-1.11.1"><a href="#section-11" class="auto internal xref">11</a>. <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12">
+            <p id="section-toc.1-1.12.1"><a href="#section-12" class="auto internal xref">12</a>. <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
+</li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13">
-            <p id="section-toc.1-1.13.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+            <p id="section-toc.1-1.13.1"><a href="#section-13" class="auto internal xref">13</a>. <a href="#name-references" class="internal xref">References</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13.2.1">
+                <p id="section-toc.1-1.13.2.1.1"><a href="#section-13.1" class="auto internal xref">13.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13.2.2">
+                <p id="section-toc.1-1.13.2.2.1"><a href="#section-13.2" class="auto internal xref">13.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.14">
-            <p id="section-toc.1-1.14.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+            <p id="section-toc.1-1.14.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15">
+            <p id="section-toc.1-1.15.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1920,51 +1930,125 @@ The table below provides some examples:<a href="#section-6.5-4" class="pilcrow">
 </div>
 </section>
 </div>
-<div id="related-work">
+<div id="study-of-the-kubernetes-metrics-api-and-exposure-mechanism">
 <section id="section-7">
-      <h2 id="name-related-work">
-<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-related-work" class="section-name selfRef">Related Work</a>
+      <h2 id="name-study-of-the-kubernetes-met">
+<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-study-of-the-kubernetes-met" class="section-name selfRef">Study of the Kubernetes Metrics API and Exposure Mechanism</a>
       </h2>
-<p id="section-7-1">Some existing work has explored compute-related metrics. They can be categorized as follows:<a href="#section-7-1" class="pilcrow">¶</a></p>
+<p id="section-7-1">An approach to develop IETF specifications for the definition of compute and
+communication metrics is to leverage existing and mature solutions, whether based on
+open standards or de facto standards. On one hand, this approach avoids
+reinventing the wheel; on the other, it ensures the specifications are based
+on significant industry experience and stable running code.<a href="#section-7-1" class="pilcrow">¶</a></p>
+<p id="section-7-2">For communication metrics, the IETF has already developed detailed and mature
+specifications. An example is the ALTO Protocol <span>[<a href="#RFC7285" class="cite xref">RFC7285</a>]</span>, which provides RFCs standardizing
+communication metrics and a detailed exposure mechanism protocol.<a href="#section-7-2" class="pilcrow">¶</a></p>
+<p id="section-7-3">Compute metrics, however, have not been thoroughly studied within the IETF.
+With the goal to avoid reinventing the wheel and to ensure significant industry
+experience is taken into account, in this section we study the Kubernetes
+Metric API. Kubernetes is not only a de facto standard to manage containerized
+software in data centers, but it is also increasingly being used by telecommunication operators
+to manage compute resources at the edge.<a href="#section-7-3" class="pilcrow">¶</a></p>
+<div id="understanding-the-kubernetes-metric-api-and-its-exposure-mechanism">
+<section id="section-7.1">
+        <h3 id="name-understanding-the-kubernete">
+<a href="#section-7.1" class="section-number selfRef">7.1. </a><a href="#name-understanding-the-kubernete" class="section-name selfRef">Understanding the Kubernetes Metric API and its Exposure Mechanism</a>
+        </h3>
+<p id="section-7.1-1"><a href="#kubernetes_metrics" class="auto internal xref">Figure 2</a> shows the Kubernetes Metric API architecture. XXX<a href="#section-7.1-1" class="pilcrow">¶</a></p>
+<span id="name-collection-and-exposure-of-"></span><div id="kubernetes_metrics">
+<figure id="figure-2">
+          <div class="alignLeft art-text artwork" id="section-7.1-2.1">
+<pre>
+            +---------------------------------------------------------------------------------+
+            |                                                                                 |
+            |  Cluster                      +-----------------------------------------------+ |
+            |                               |                                               | |
+            |                               |  Node                           +-----------+ | |
+            |                               |                                 | Container | | |
+            |                               |                               +-+           | | |
+            |                               |                               | |  runtime  | | |
+            |                               |                 +----------+  | +-----------+ | |
++-------+   |                               |                 |          |  |               | |
+|  HPA  &lt;-+ |                               |               +-+ cAdvisor |&lt;-+               | |
++-------+ | |                               |               | |          |  | +-----------+ | |
+          | | +----------+    +-----------+ | +----------+  | +----------+  | | Container | | |
++-------+ | | |  API     |    |  Metrics  | | |          |  |               +-+           | | |
+|  VPA  &lt;-+-+-+          &lt;--+-+           &lt;-+-+ Kubelet  &lt;--+                 |  runtime  | | |
++-------+ | | | server   |  | |   server  | | |          |  |                 +-----------+ | |
+          | | +----------+  | +-----------+ | +----------+  |                               | |
++-------+ | |               |               |               |                               | |
+|kucectl| | |               |               |               | +----------+                  | |
+| stop  &lt;-+ |               | +-----------+ |               | |  Other   |                  | |
++-------+   |               | |  Other    | |               +-+   pod    |                  | |
+            |               +-+           | |                 |   data   |                  | |
+            |                 |  data     | |                 +----------+                  | |
+            |                 +-----------+ |                                               | |
+            |                               +-----------------------------------------------+ |
+            |                                                                                 |
+            +---------------------------------------------------------------------------------+
+</pre>
+</div>
+<figcaption><a href="#figure-2" class="selfRef">Figure 2</a>:
+<a href="#name-collection-and-exposure-of-" class="selfRef">Collection and exposure of metrics using the Kubernetes metric API.</a>
+          </figcaption></figure>
+</div>
+</section>
+</div>
+<div id="mapping-the-kubernetes-metrics-api-and-the-cats-architectures">
+<section id="section-7.2">
+        <h3 id="name-mapping-the-kubernetes-metr">
+<a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-mapping-the-kubernetes-metr" class="section-name selfRef">Mapping the Kubernetes Metrics API and the CATS Architectures</a>
+        </h3>
+<p id="section-7.2-1">XXX<a href="#section-7.2-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
+<div id="related-work">
+<section id="section-8">
+      <h2 id="name-related-work">
+<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-related-work" class="section-name selfRef">Related Work</a>
+      </h2>
+<p id="section-8-1">Some existing work has explored compute-related metrics. They can be categorized as follows:<a href="#section-8-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-7-2.1">
-          <p id="section-7-2.1.1">References providing raw compute infrastructure metrics: <span>[<a href="#I-D.contreras-alto-service-edge" class="cite xref">I-D.contreras-alto-service-edge</a>]</span> includes references to cloud management solutions (i.e., OpenStack, Kubernetes, etc) which administer the virtualization infrastructure, providing information about raw compute infrastructure metrics. Furthermore, <span>[<a href="#NFV-TST" class="cite xref">NFV-TST</a>]</span> describes processor, memory and network interface usage metrics.<a href="#section-7-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-8-2.1">
+          <p id="section-8-2.1.1">References providing raw compute infrastructure metrics: <span>[<a href="#I-D.contreras-alto-service-edge" class="cite xref">I-D.contreras-alto-service-edge</a>]</span> includes references to cloud management solutions (i.e., OpenStack, Kubernetes, etc) which administer the virtualization infrastructure, providing information about raw compute infrastructure metrics. Furthermore, <span>[<a href="#NFV-TST" class="cite xref">NFV-TST</a>]</span> describes processor, memory and network interface usage metrics.<a href="#section-8-2.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-7-2.2">
-          <p id="section-7-2.2.1">References providing compute virtualization metrics: <span>[<a href="#RFC7666" class="cite xref">RFC7666</a>]</span> provides several metrics as part of the Management Information Base (MIB) definition for managing virtual machines controlled by a hypervisor. The objects there defined make reference to the resources consumed by a particluar virtual machine serving as host for services or applications. Moreover, <span>[<a href="#NFV-INF" class="cite xref">NFV-INF</a>]</span> provides metrics associated to virtualized network functions.<a href="#section-7-2.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-8-2.2">
+          <p id="section-8-2.2.1">References providing compute virtualization metrics: <span>[<a href="#RFC7666" class="cite xref">RFC7666</a>]</span> provides several metrics as part of the Management Information Base (MIB) definition for managing virtual machines controlled by a hypervisor. The objects there defined make reference to the resources consumed by a particluar virtual machine serving as host for services or applications. Moreover, <span>[<a href="#NFV-INF" class="cite xref">NFV-INF</a>]</span> provides metrics associated to virtualized network functions.<a href="#section-8-2.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-7-2.3">
-          <p id="section-7-2.3.1">References providing service metrics including compute-related information: <span>[<a href="#I-D.dunbar-cats-edge-service-metrics" class="cite xref">I-D.dunbar-cats-edge-service-metrics</a>]</span> proposes metrics associated to services running in compute infrastructures. Some of these metrics do not depend on the infrastructure behavior itself but from where such compute infrastructure is topologically located.<a href="#section-7-2.3.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-8-2.3">
+          <p id="section-8-2.3.1">References providing service metrics including compute-related information: <span>[<a href="#I-D.dunbar-cats-edge-service-metrics" class="cite xref">I-D.dunbar-cats-edge-service-metrics</a>]</span> proposes metrics associated to services running in compute infrastructures. Some of these metrics do not depend on the infrastructure behavior itself but from where such compute infrastructure is topologically located.<a href="#section-8-2.3.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-7-2.4">
-          <p id="section-7-2.4.1">Other existing work at the IETF CATS WG has explored the collection
+        <li class="normal" id="section-8-2.4">
+          <p id="section-8-2.4.1">Other existing work at the IETF CATS WG has explored the collection
 and distribution of computing metrics in <span>[<a href="#I-D.ldbc-cats-framework" class="cite xref">I-D.ldbc-cats-framework</a>]</span>.
 In their deployment considerations, they consider three models: distributed,
-centralized and hybrid.<a href="#section-7-2.4.1" class="pilcrow">¶</a></p>
+centralized and hybrid.<a href="#section-8-2.4.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 </section>
 </div>
 <div id="guiding-principles">
-<section id="section-8">
+<section id="section-9">
       <h2 id="name-guiding-principles">
-<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-guiding-principles" class="section-name selfRef">Guiding Principles</a>
+<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-guiding-principles" class="section-name selfRef">Guiding Principles</a>
       </h2>
-<p id="section-8-1">The driving principles for designing an interface to jointly extract
-network and compute information are as follows:<a href="#section-8-1" class="pilcrow">¶</a></p>
-<p id="section-8-2">P1. Leverage metrics across working groups to avoid reinventing the wheel. For instance:<a href="#section-8-2" class="pilcrow">¶</a></p>
+<p id="section-9-1">The driving principles for designing an interface to jointly extract
+network and compute information are as follows:<a href="#section-9-1" class="pilcrow">¶</a></p>
+<p id="section-9-2">P1. Leverage metrics across working groups to avoid reinventing the wheel. For instance:<a href="#section-9-2" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-8-3.1">
-          <p id="section-8-3.1.1">RFC 9439 <span>[<a href="#I-D.ietf-alto-performance-metrics" class="cite xref">I-D.ietf-alto-performance-metrics</a>]</span> leverages IPPM metrics from RFC 7679.<a href="#section-8-3.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-9-3.1">
+          <p id="section-9-3.1.1">RFC 9439 <span>[<a href="#I-D.ietf-alto-performance-metrics" class="cite xref">I-D.ietf-alto-performance-metrics</a>]</span> leverages IPPM metrics from RFC 7679.<a href="#section-9-3.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-8-3.2">
-          <p id="section-8-3.2.1">Section 5.2 of <span>[<a href="#I-D.du-cats-computing-modeling-description" class="cite xref">I-D.du-cats-computing-modeling-description</a>]</span> considers delay as a good metric, since it is easy to use in both compute and communication domains. RFC 9439 also defines delay as part of the performance metrics.<a href="#section-8-3.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-9-3.2">
+          <p id="section-9-3.2.1">Section 5.2 of <span>[<a href="#I-D.du-cats-computing-modeling-description" class="cite xref">I-D.du-cats-computing-modeling-description</a>]</span> considers delay as a good metric, since it is easy to use in both compute and communication domains. RFC 9439 also defines delay as part of the performance metrics.<a href="#section-9-3.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-8-3.3">
-          <p id="section-8-3.3.1">Section 6 of <span>[<a href="#I-D.du-cats-computing-modeling-description" class="cite xref">I-D.du-cats-computing-modeling-description</a>]</span> proposes to represent the network structure as graphs, which is similar to the ALTO map services in <span>[<a href="#RFC7285" class="cite xref">RFC7285</a>]</span>.<a href="#section-8-3.3.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-9-3.3">
+          <p id="section-9-3.3.1">Section 6 of <span>[<a href="#I-D.du-cats-computing-modeling-description" class="cite xref">I-D.du-cats-computing-modeling-description</a>]</span> proposes to represent the network structure as graphs, which is similar to the ALTO map services in <span>[<a href="#RFC7285" class="cite xref">RFC7285</a>]</span>.<a href="#section-9-3.3.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-8-4">P2. Aim for simplicity, while ensuring the combined efforts
+<p id="section-9-4">P2. Aim for simplicity, while ensuring the combined efforts
 don’t leave technical gaps in supporting the full life cycle
 of service deployment and selection. For instance, the CATS working
 group is covering path selection from a network standpoint, while
@@ -1972,42 +2056,42 @@ ALTO (e.g., <span>[<a href="#RFC7285" class="cite xref">RFC7285</a>]</span>) cov
 to the service provider and the client application. However,
 there is currently no effort being pursued to expose compute information
 to the service provider and the client application for
-service placement or selection.<a href="#section-8-4" class="pilcrow">¶</a></p>
+service placement or selection.<a href="#section-9-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="gap-analysis">
-<section id="section-9">
+<section id="section-10">
       <h2 id="name-gap-analysis">
-<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-gap-analysis" class="section-name selfRef">GAP Analysis</a>
+<a href="#section-10" class="section-number selfRef">10. </a><a href="#name-gap-analysis" class="section-name selfRef">GAP Analysis</a>
       </h2>
-<p id="section-9-1">From this related work it is evident that compute-related metrics can serve several purposes, ranging from service instance instantiation to service instance behavior, and then to service instance selection. Some of the metrics could refer to the same object (e.g., CPU) but with a particular usage and scope.<a href="#section-9-1" class="pilcrow">¶</a></p>
-<p id="section-9-2">In contrast, the network metrics are more uniform and straightforward. It is then necessary to consistently define a set of metrics that could assist to the operation in the different concerns identified so far, so that networks and systems could have a common understanding of the perceived compute performance. When combined with network metrics, the combined network plus compute performance behavior will assist informed decisions particular to each of the operational concerns related to the different parts of a service life cycle.<a href="#section-9-2" class="pilcrow">¶</a></p>
+<p id="section-10-1">From this related work it is evident that compute-related metrics can serve several purposes, ranging from service instance instantiation to service instance behavior, and then to service instance selection. Some of the metrics could refer to the same object (e.g., CPU) but with a particular usage and scope.<a href="#section-10-1" class="pilcrow">¶</a></p>
+<p id="section-10-2">In contrast, the network metrics are more uniform and straightforward. It is then necessary to consistently define a set of metrics that could assist to the operation in the different concerns identified so far, so that networks and systems could have a common understanding of the perceived compute performance. When combined with network metrics, the combined network plus compute performance behavior will assist informed decisions particular to each of the operational concerns related to the different parts of a service life cycle.<a href="#section-10-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="security-considerations">
-<section id="section-10">
+<section id="section-11">
       <h2 id="name-security-considerations">
-<a href="#section-10" class="section-number selfRef">10. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+<a href="#section-11" class="section-number selfRef">11. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-10-1">TODO Security<a href="#section-10-1" class="pilcrow">¶</a></p>
+<p id="section-11-1">TODO Security<a href="#section-11-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
-<section id="section-11">
+<section id="section-12">
       <h2 id="name-iana-considerations">
-<a href="#section-11" class="section-number selfRef">11. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
+<a href="#section-12" class="section-number selfRef">12. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
-<p id="section-11-1">This document has no IANA actions.<a href="#section-11-1" class="pilcrow">¶</a></p>
+<p id="section-12-1">This document has no IANA actions.<a href="#section-12-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<section id="section-12">
+<section id="section-13">
       <h2 id="name-references">
-<a href="#section-12" class="section-number selfRef">12. </a><a href="#name-references" class="section-name selfRef">References</a>
+<a href="#section-13" class="section-number selfRef">13. </a><a href="#name-references" class="section-name selfRef">References</a>
       </h2>
 <div id="sec-normative-references">
-<section id="section-12.1">
+<section id="section-13.1">
         <h3 id="name-normative-references">
-<a href="#section-12.1" class="section-number selfRef">12.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+<a href="#section-13.1" class="section-number selfRef">13.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
         </h3>
 <dl class="references">
 <dt id="I-D.du-cats-computing-modeling-description">[I-D.du-cats-computing-modeling-description]</dt>
@@ -2038,9 +2122,9 @@ service placement or selection.<a href="#section-8-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-informative-references">
-<section id="section-12.2">
+<section id="section-13.2">
         <h3 id="name-informative-references">
-<a href="#section-12.2" class="section-number selfRef">12.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+<a href="#section-13.2" class="section-number selfRef">13.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
 <dt id="DC-AI-COST">[DC-AI-COST]</dt>

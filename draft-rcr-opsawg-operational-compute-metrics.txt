@@ -5,12 +5,12 @@
 Network Working Group                                     S. Randriamasy
 Internet-Draft                                           Nokia Bell Labs
 Intended status: Informational                           L. M. Contreras
-Expires: 2 December 2024                                      Telefonica
+Expires: 4 January 2025                                       Telefonica
                                                            J. Ros-Giralt
                                                    Qualcomm Europe, Inc.
                                                                R. Schott
                                                         Deutsche Telekom
-                                                             31 May 2024
+                                                             3 July 2024
 
 
  Joint Exposure of Network and Compute Information for Infrastructure-
@@ -61,7 +61,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 December 2024.
+   This Internet-Draft will expire on 4 January 2025.
 
 Copyright Notice
 
@@ -102,14 +102,19 @@ Table of Contents
                (CATS)
        6.7.2.  Metric Exposure with Extensions of ALTO
        6.7.3.  Exposure of Abstracted Generic Metrics
-   7.  Related Work
-   8.  Guiding Principles
-   9.  GAP Analysis
-   10. Security Considerations
-   11. IANA Considerations
-   12. References
-     12.1.  Normative References
-     12.2.  Informative References
+   7.  Study of the Kubernetes Metrics API and Exposure Mechanism
+     7.1.  Understanding the Kubernetes Metric API and its Exposure
+           Mechanism
+     7.2.  Mapping the Kubernetes Metrics API and the CATS
+           Architectures
+   8.  Related Work
+   9.  Guiding Principles
+   10. GAP Analysis
+   11. Security Considerations
+   12. IANA Considerations
+   13. References
+     13.1.  Normative References
+     13.2.  Informative References
    Acknowledgments
    Authors' Addresses
 
@@ -695,7 +700,68 @@ Table of Contents
    to first and/or last byte, or a single value reflecting a global
    performance score.
 
-7.  Related Work
+7.  Study of the Kubernetes Metrics API and Exposure Mechanism
+
+   An approach to develop IETF specifications for the definition of
+   compute and communication metrics is to leverage existing and mature
+   solutions, whether based on open standards or de facto standards.  On
+   one hand, this approach avoids reinventing the wheel; on the other,
+   it ensures the specifications are based on significant industry
+   experience and stable running code.
+
+   For communication metrics, the IETF has already developed detailed
+   and mature specifications.  An example is the ALTO Protocol
+   [RFC7285], which provides RFCs standardizing communication metrics
+   and a detailed exposure mechanism protocol.
+
+   Compute metrics, however, have not been thoroughly studied within the
+   IETF.  With the goal to avoid reinventing the wheel and to ensure
+   significant industry experience is taken into account, in this
+   section we study the Kubernetes Metric API.  Kubernetes is not only a
+   de facto standard to manage containerized software in data centers,
+   but it is also increasingly being used by telecommunication operators
+   to manage compute resources at the edge.
+
+7.1.  Understanding the Kubernetes Metric API and its Exposure Mechanism
+
+   Figure 2 shows the Kubernetes Metric API architecture.  XXX
+
+            +---------------------------------------------------------------------------------+
+            |                                                                                 |
+            |  Cluster                      +-----------------------------------------------+ |
+            |                               |                                               | |
+            |                               |  Node                           +-----------+ | |
+            |                               |                                 | Container | | |
+            |                               |                               +-+           | | |
+            |                               |                               | |  runtime  | | |
+            |                               |                 +----------+  | +-----------+ | |
++-------+   |                               |                 |          |  |               | |
+|  HPA  <-+ |                               |               +-+ cAdvisor |<-+               | |
++-------+ | |                               |               | |          |  | +-----------+ | |
+          | | +----------+    +-----------+ | +----------+  | +----------+  | | Container | | |
++-------+ | | |  API     |    |  Metrics  | | |          |  |               +-+           | | |
+|  VPA  <-+-+-+          <--+-+           <-+-+ Kubelet  <--+                 |  runtime  | | |
++-------+ | | | server   |  | |   server  | | |          |  |                 +-----------+ | |
+          | | +----------+  | +-----------+ | +----------+  |                               | |
++-------+ | |               |               |               |                               | |
+|kucectl| | |               |               |               | +----------+                  | |
+| stop  <-+ |               | +-----------+ |               | |  Other   |                  | |
++-------+   |               | |  Other    | |               +-+   pod    |                  | |
+            |               +-+           | |                 |   data   |                  | |
+            |                 |  data     | |                 +----------+                  | |
+            |                 +-----------+ |                                               | |
+            |                               +-----------------------------------------------+ |
+            |                                                                                 |
+            +---------------------------------------------------------------------------------+
+
+  Figure 2: Collection and exposure of metrics using the Kubernetes
+                             metric API.
+
+7.2.  Mapping the Kubernetes Metrics API and the CATS Architectures
+
+   XXX
+
+8.  Related Work
 
    Some existing work has explored compute-related metrics.  They can be
    categorized as follows:
@@ -728,7 +794,7 @@ Table of Contents
       [I-D.ldbc-cats-framework].  In their deployment considerations,
       they consider three models: distributed, centralized and hybrid.
 
-8.  Guiding Principles
+9.  Guiding Principles
 
    The driving principles for designing an interface to jointly extract
    network and compute information are as follows:
@@ -758,7 +824,7 @@ Table of Contents
    provider and the client application for service placement or
    selection.
 
-9.  GAP Analysis
+10.  GAP Analysis
 
    From this related work it is evident that compute-related metrics can
    serve several purposes, ranging from service instance instantiation
@@ -776,17 +842,17 @@ Table of Contents
    each of the operational concerns related to the different parts of a
    service life cycle.
 
-10.  Security Considerations
+11.  Security Considerations
 
    TODO Security
 
-11.  IANA Considerations
+12.  IANA Considerations
 
    This document has no IANA actions.
 
-12.  References
+13.  References
 
-12.1.  Normative References
+13.1.  Normative References
 
    [I-D.du-cats-computing-modeling-description]
               Du, Z., Fu, Y., Li, C., Huang, D., and Z. Fu, "Computing
@@ -828,7 +894,7 @@ Table of Contents
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
-12.2.  Informative References
+13.2.  Informative References
 
    [DC-AI-COST]
               "Generative AI Breaks The Data Center - Data Center
