@@ -1233,7 +1233,7 @@ common exposure scheme for metrics reflecting compute and communication capabili
                 <p id="section-toc.1-1.7.2.1.1"><a href="#section-7.1" class="auto internal xref">7.1</a>.  <a href="#name-understanding-the-kubernete" class="internal xref">Understanding the Kubernetes Metrics API and its Exposure Mechanism</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.2">
-                <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="auto internal xref">7.2</a>.  <a href="#name-mapping-the-kubernetes-metr" class="internal xref">Mapping the Kubernetes Metrics API and the CATS Architectures</a></p>
+                <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="auto internal xref">7.2</a>.  <a href="#name-example-of-mapping-the-kube" class="internal xref">Example of Mapping the Kubernetes Metrics API and the CATS Architectures</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.3">
                 <p id="section-toc.1-1.7.2.3.1"><a href="#section-7.3" class="auto internal xref">7.3</a>.  <a href="#name-available-metrics-from-the-" class="internal xref">Available Metrics from the Kubernetes Metrics API</a></p>
@@ -2017,18 +2017,18 @@ One of them corresponds to the Metrics API service. HPA, VPA, and
 </div>
 </section>
 </div>
-<div id="mapping-the-kubernetes-metrics-api-and-the-cats-architectures">
+<div id="example-of-mapping-the-kubernetes-metrics-api-and-the-cats-architectures">
 <section id="section-7.2">
-        <h3 id="name-mapping-the-kubernetes-metr">
-<a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-mapping-the-kubernetes-metr" class="section-name selfRef">Mapping the Kubernetes Metrics API and the CATS Architectures</a>
+        <h3 id="name-example-of-mapping-the-kube">
+<a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-example-of-mapping-the-kube" class="section-name selfRef">Example of Mapping the Kubernetes Metrics API and the CATS Architectures</a>
         </h3>
-<p id="section-7.2-1">In this section, we observe that there is a natural mapping between
-the Kubernetes Metrics API and the IETF CATS architecture. This
-makes the Metrics API a de facto standard that can be easily
-adapted to support the CATS distributed design.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
+<p id="section-7.2-1">In this section, we describe a mapping between
+the Kubernetes Metrics API and the IETF CATS metric dissemination
+architecture, illustrating how a de facto standard widely used in production
+systems can be easily adapted to support the CATS metrics framework.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
 <p id="section-7.2-2">To describe the mapping, we take the distributed model
-of the CATS Metric Dissemination framework introduced in
-<span>[<a href="#I-D.ldbc-cats-framework" class="cite xref">I-D.ldbc-cats-framework</a>]</span>, and include it in <a href="#cats_framework" class="auto internal xref">Figure 3</a>
+of the CATS metrics dissemination framework introduced in
+<span>[<a href="#I-D.ldbc-cats-framework" class="cite xref">I-D.ldbc-cats-framework</a>]</span>, which we include in <a href="#cats_framework" class="auto internal xref">Figure 3</a>
 for ease of reading.<a href="#section-7.2-2" class="pilcrow">¶</a></p>
 <span id="name-collection-and-exposure-of-m"></span><div id="cats_framework">
 <figure id="figure-3">
@@ -2068,7 +2068,7 @@ for ease of reading.<a href="#section-7.2-2" class="pilcrow">¶</a></p>
 <a href="#name-collection-and-exposure-of-m" class="selfRef">Collection and exposure of metrics using the CATS Distributed Model. (Taken from [I-D.ldbc-cats-framework])</a>
           </figcaption></figure>
 </div>
-<p id="section-7.2-4">xxx<a href="#section-7.2-4" class="pilcrow">¶</a></p>
+<p id="section-7.2-4">The following table provides the mapping:<a href="#section-7.2-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="available-metrics-from-the-kubernetes-metrics-api">
