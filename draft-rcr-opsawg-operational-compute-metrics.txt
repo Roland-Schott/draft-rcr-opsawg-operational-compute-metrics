@@ -785,7 +785,7 @@ Table of Contents
             +---------------------------------------------------------------------------------+
 
   Figure 2: Collection and exposure of metrics using the Kubernetes
-                             metric API.
+                             Metrics API.
 
 7.2.  Mapping the Kubernetes Metrics API and the CATS Architectures
 
@@ -828,8 +828,8 @@ Table of Contents
                  :                                :      +-------+
                  :<-------------------------------:
 
-      Figure 3: CATS Metric Dessimination in a Distributed Model.
-                (Taken from [I- D.ldbc-cats-framework])
+      Figure 3: Collection and exposure of metrics using the CATS
+       Distributed Model.  (Taken from [I-D.ldbc-cats-framework])
 
    xxx
 
