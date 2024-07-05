@@ -5,12 +5,12 @@
 Network Working Group                                     S. Randriamasy
 Internet-Draft                                           Nokia Bell Labs
 Intended status: Informational                           L. M. Contreras
-Expires: 5 January 2025                                       Telefonica
+Expires: 6 January 2025                                       Telefonica
                                                            J. Ros-Giralt
                                                    Qualcomm Europe, Inc.
                                                                R. Schott
                                                         Deutsche Telekom
-                                                             4 July 2024
+                                                             5 July 2024
 
 
  Joint Exposure of Network and Compute Information for Infrastructure-
@@ -61,7 +61,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 January 2025.
+   This Internet-Draft will expire on 6 January 2025.
 
 Copyright Notice
 
@@ -789,7 +789,49 @@ Table of Contents
 
 7.2.  Mapping the Kubernetes Metrics API and the CATS Architectures
 
-   XXX
+   In this section, we observe that there is a natural mapping between
+   the Kubernetes Metrics API and the IETF CATS architecture.  This
+   makes the Metrics API a de facto standard that can be easily adapted
+   to support the CATS distributed design.
+
+   To describe the mapping, we take the distributed model of the CATS
+   Metric Dissemination framework introduced in
+   [I-D.ldbc-cats-framework], and include it in Figure 3 for ease of
+   reading.
+
+                 :<----------------------:
+                 :                       :              +--------+
+                 :                       :              |CS-ID 1 |
+                 :                       :           +--|CIS-ID 1|
+                 :              +----------------+   |  +--------+
+                 :              |    C-SMA       |---|   Service Site 2
+                 :              +----------------+   |  +--------+
+                 :              |CATS-Forwarder 2|   +--|CS-ID 1 |
+                 :              +----------------+      |CIS-ID 2|
+ +--------+      :                        |             +--------+
+ | Client |      :  Network +----------------------+
+ +--------+      :  metrics | +-------+            |
+       |         : :<---------| C-NMA |            |
+       |         : :        | +-------+            |
+ +---------------------+    |                      |
+ |CATS-Forwarder 1|C-PS|----|                      |
+ +---------------------+    |       Underlay       |
+                 :          |     Infrastructure   |     +--------+
+                 :          |                      |     |CS-ID 1 |
+                 :          +----------------------+ +---|CIS-ID 3|
+                 :                    |              |   +--------+
+                 :          +----------------+  +-------+
+                 :          |CATS-Forwarder 3|--| C-SMA | Service Site 3
+                 :          +----------------+  +-------+
+                 :                                :  |   +-------+
+                 :                                :  +---|CS-ID 2|
+                 :                                :      +-------+
+                 :<-------------------------------:
+
+      Figure 3: CATS Metric Dessimination in a Distributed Model.
+                (Taken from [I- D.ldbc-cats-framework])
+
+   xxx
 
 7.3.  Available Metrics from the Kubernetes Metrics API
 
