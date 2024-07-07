@@ -5,12 +5,12 @@
 Network Working Group                                     S. Randriamasy
 Internet-Draft                                           Nokia Bell Labs
 Intended status: Informational                           L. M. Contreras
-Expires: 6 January 2025                                       Telefonica
+Expires: 8 January 2025                                       Telefonica
                                                            J. Ros-Giralt
                                                    Qualcomm Europe, Inc.
                                                                R. Schott
                                                         Deutsche Telekom
-                                                             5 July 2024
+                                                             7 July 2024
 
 
  Joint Exposure of Network and Compute Information for Infrastructure-
@@ -61,7 +61,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 January 2025.
+   This Internet-Draft will expire on 8 January 2025.
 
 Copyright Notice
 
@@ -795,42 +795,44 @@ Table of Contents
    how a de facto standard widely used in production systems can be
    easily adapted to support the CATS metrics framework.
 
-   To describe the mapping, we take the distributed model of the CATS
+   To describe the mapping, we take the centralized model of the CATS
    metrics dissemination framework introduced in
    [I-D.ldbc-cats-framework], which we include in Figure 3 for ease of
-   reading.
+   reading.  (Similar mappings can be created with the distributed and
+   hybrid models also introduced in this Figure 3)
 
-                 :<----------------------:
-                 :                       :              +--------+
-                 :                       :              |CS-ID 1 |
-                 :                       :           +--|CIS-ID 1|
-                 :              +----------------+   |  +--------+
-                 :              |    C-SMA       |---|   Service Site 2
-                 :              +----------------+   |  +--------+
-                 :              |CATS-Forwarder 2|   +--|CS-ID 1 |
-                 :              +----------------+      |CIS-ID 2|
- +--------+      :                        |             +--------+
- | Client |      :  Network +----------------------+
- +--------+      :  metrics | +-------+            |
-       |         : :<---------| C-NMA |            |
-       |         : :        | +-------+            |
- +---------------------+    |                      |
- |CATS-Forwarder 1|C-PS|----|                      |
- +---------------------+    |       Underlay       |
-                 :          |     Infrastructure   |     +--------+
-                 :          |                      |     |CS-ID 1 |
-                 :          +----------------------+ +---|CIS-ID 3|
-                 :                    |              |   +--------+
-                 :          +----------------+  +-------+
-                 :          |CATS-Forwarder 3|--| C-SMA | Service Site 3
-                 :          +----------------+  +-------+
-                 :                                :  |   +-------+
-                 :                                :  +---|CS-ID 2|
-                 :                                :      +-------+
-                 :<-------------------------------:
+               :       +------+
+               :<------| C-PS |<----------------------------------+
+               :       +------+ <------+              +--------+  |
+               :          ^            |           +--|CS-ID 1 |  |
+               :          |            |           |  |CIS-ID 1|  |
+               :          |   +----------------+   |  +--------+  |
+               :          |   |    C-SMA       |---|Service Site 2|
+               :          |   +----------------+   |  +--------+  |
+               :          |   |CATS-Forwarder 2|   +--|CS-ID 1 |  |
+               :          |   +----------------+      |CIS-ID 2|  |
+   +--------+  :          |             |             +--------+  |
+   | Client |  :  Network |   +----------------------+            |
+   +--------+  :  metrics |   | +-------+            |            |
+        |      :          +-----| C-NMA |            |      +-----+
+        |      :          |   | +-------+            |      |C-SMA|<-+
+   +----------------+ <---+   |                      |      +-----+  |
+   |CATS-Forwarder 1|---------|                      |          ^    |
+   +----------------+         |       Underlay       |          |    |
+               :              |     Infrastructure   |     +--------+|
+               :              |                      |     |CS-ID 1 ||
+               :              +----------------------+  +--|CIS-ID 3||
+               :                        |               |  +--------+|
+               :          +----------------+------------+            |
+               :          |CATS-Forwarder 3|         Service Site 3  |
+               :          +----------------+                         |
+               :                        |       :      +-------+     |
+               :                        +-------:------|CS-ID 2|-----+
+               :                                :      +-------+
+               :<-------------------------------:
 
-      Figure 3: Collection and exposure of metrics using the CATS
-       Distributed Model.  (Taken from [I-D.ldbc-cats-framework])
+        Figure 3: Collection and exposure of metrics using the CATS
+         Centralized Model.  (Taken from [I-D.ldbc-cats-framework])
 
    The following table provides the mapping:
 
@@ -932,12 +934,12 @@ Table of Contents
 13.1.  Normative References
 
    [I-D.du-cats-computing-modeling-description]
-              Du, Z., Fu, Y., Li, C., Huang, D., and Z. Fu, "Computing
+              Du, Z., Yao, K., Li, C., Huang, D., and Z. Fu, "Computing
               Information Description in Computing-Aware Traffic
               Steering", Work in Progress, Internet-Draft, draft-du-
-              cats-computing-modeling-description-02, 23 October 2023,
+              cats-computing-modeling-description-03, 6 July 2024,
               <https://datatracker.ietf.org/doc/html/draft-du-cats-
-              computing-modeling-description-02>.
+              computing-modeling-description-03>.
 
    [I-D.ietf-alto-performance-metrics]
               Wu, Q., Yang, Y. R., Lee, Y., Dhody, D., Randriamasy, S.,
