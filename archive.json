@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-04T01:10:17.985310+00:00",
+  "timestamp": "2024-07-07T01:16:13.401309+00:00",
   "repo": "giralt/draft-rcr-opsawg-operational-compute-metrics",
   "labels": [
     {
@@ -70,6 +70,74 @@
       "headRepository": "giralt/draft-rcr-opsawg-operational-compute-metrics",
       "headRefName": "luismcontreras-patch-1",
       "headRefOid": "88e49947b31673a7bd423b05678b1cb7b41d3db8",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDOKgx8kM50hvsM",
+      "title": "Update draft-rcr-opsawg-operational-compute-metrics.md",
+      "url": "https://github.com/giralt/draft-rcr-opsawg-operational-compute-metrics/pull/2",
+      "state": "MERGED",
+      "author": "luismcontreras",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Added ACK for Luis",
+      "createdAt": "2024-07-05T11:15:41Z",
+      "updatedAt": "2024-07-05T11:42:28Z",
+      "baseRepository": "giralt/draft-rcr-opsawg-operational-compute-metrics",
+      "baseRefName": "main",
+      "baseRefOid": "fb7b157cc1e04e676949d7ece31428a7533573a5",
+      "headRepository": "giralt/draft-rcr-opsawg-operational-compute-metrics",
+      "headRefName": "luismcontreras-patch-2",
+      "headRefOid": "9a9ee504b645c601072a4261973b4b680d8e28f0",
+      "closedAt": "2024-07-05T11:42:28Z",
+      "mergedAt": "2024-07-05T11:42:28Z",
+      "mergedBy": "giralt",
+      "mergeCommit": {
+        "oid": "1687fa52bc62b0a8f692a875cfa16b3097becd85"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKgx8kM6Ax220",
+          "commit": {
+            "abbreviatedOid": "9a9ee50"
+          },
+          "author": "giralt",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-07-05T11:42:23Z",
+          "updatedAt": "2024-07-05T11:42:23Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "id": "PR_kwDOKgx8kM50h4-z",
+      "title": "Update draft-rcr-opsawg-operational-compute-metrics.md",
+      "url": "https://github.com/giralt/draft-rcr-opsawg-operational-compute-metrics/pull/3",
+      "state": "OPEN",
+      "author": "luismcontreras",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Added \"service assurance\" to the lifecycle",
+      "createdAt": "2024-07-05T11:42:23Z",
+      "updatedAt": "2024-07-05T11:42:24Z",
+      "baseRepository": "giralt/draft-rcr-opsawg-operational-compute-metrics",
+      "baseRefName": "main",
+      "baseRefOid": "fb7b157cc1e04e676949d7ece31428a7533573a5",
+      "headRepository": "giralt/draft-rcr-opsawg-operational-compute-metrics",
+      "headRefName": "luismcontreras-patch-3",
+      "headRefOid": "22e56295f0a9945ce91f880b74dd79cbea1f66bc",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
