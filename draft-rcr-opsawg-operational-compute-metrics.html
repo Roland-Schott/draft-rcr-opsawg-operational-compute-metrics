@@ -1042,7 +1042,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Randriamasy, et al.</td>
-<td class="center">Expires 8 January 2025</td>
+<td class="center">Expires 9 January 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1055,12 +1055,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-rcr-opsawg-operational-compute-metrics-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-07-07" class="published">7 July 2024</time>
+<time datetime="2024-07-08" class="published">8 July 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-01-08">8 January 2025</time></dd>
+<dd class="expires"><time datetime="2025-01-09">9 January 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1126,7 +1126,7 @@ common exposure scheme for metrics reflecting compute and communication capabili
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 8 January 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 9 January 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1233,7 +1233,7 @@ common exposure scheme for metrics reflecting compute and communication capabili
                 <p id="section-toc.1-1.7.2.1.1"><a href="#section-7.1" class="auto internal xref">7.1</a>.  <a href="#name-understanding-the-kubernete" class="internal xref">Understanding the Kubernetes Metrics API and its Exposure Mechanism</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.2">
-                <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="auto internal xref">7.2</a>.  <a href="#name-example-of-mapping-the-kube" class="internal xref">Example of Mapping the Kubernetes Metrics API and the CATS Architectures</a></p>
+                <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="auto internal xref">7.2</a>.  <a href="#name-example-of-how-to-map-the-k" class="internal xref">Example of How to Map the Kubernetes Metrics API with the IETF CATS METRICS Distribution</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.3">
                 <p id="section-toc.1-1.7.2.3.1"><a href="#section-7.3" class="auto internal xref">7.3</a>.  <a href="#name-available-metrics-from-the-" class="internal xref">Available Metrics from the Kubernetes Metrics API</a></p>
@@ -2017,15 +2017,16 @@ One of them corresponds to the Metrics API service. HPA, VPA, and
 </div>
 </section>
 </div>
-<div id="example-of-mapping-the-kubernetes-metrics-api-and-the-cats-architectures">
+<div id="example-of-how-to-map-the-kubernetes-metrics-api-with-the-ietf-cats-metrics-distribution">
 <section id="section-7.2">
-        <h3 id="name-example-of-mapping-the-kube">
-<a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-example-of-mapping-the-kube" class="section-name selfRef">Example of Mapping the Kubernetes Metrics API and the CATS Architectures</a>
+        <h3 id="name-example-of-how-to-map-the-k">
+<a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-example-of-how-to-map-the-k" class="section-name selfRef">Example of How to Map the Kubernetes Metrics API with the IETF CATS METRICS Distribution</a>
         </h3>
 <p id="section-7.2-1">In this section, we describe a mapping between
 the Kubernetes Metrics API and the IETF CATS metric dissemination
-architecture, illustrating how a de facto standard widely used in production
-systems can be easily adapted to support the CATS metrics framework.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
+architecture, illustrating and example of how a de facto standard widely
+used in production systems can be adapted to support the CATS metrics
+framework.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
 <p id="section-7.2-2">To describe the mapping, we take the centralized model
 of the CATS metrics dissemination framework introduced in
 <span>[<a href="#I-D.ldbc-cats-framework" class="cite xref">I-D.ldbc-cats-framework</a>]</span>, which we include in <a href="#cats_framework" class="auto internal xref">Figure 3</a>
@@ -2071,6 +2072,50 @@ distributed and hybrid models also introduced in this <a href="#cats_framework" 
           </figcaption></figure>
 </div>
 <p id="section-7.2-4">The following table provides the mapping:<a href="#section-7.2-4" class="pilcrow">¶</a></p>
+<span id="name-example-of-how-to-map-the-ku"></span><div id="kub_cats_map">
+<table class="center" id="table-6">
+          <caption>
+<a href="#table-6" class="selfRef">Table 6</a>:
+<a href="#name-example-of-how-to-map-the-ku" class="selfRef">Example of how to map the Kubernetes Metrics API with the IETF CATS Architecture.</a>
+          </caption>
+<thead>
+            <tr>
+              <th class="text-left" rowspan="1" colspan="1">IETF CATS component</th>
+              <th class="text-left" rowspan="1" colspan="1">Kubernetes Metrics API component</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">CIS-ID</td>
+              <td class="text-left" rowspan="1" colspan="1">Container runtime</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">C-SMA</td>
+              <td class="text-left" rowspan="1" colspan="1">cAdvisor</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">C-NMA</td>
+              <td class="text-left" rowspan="1" colspan="1">Other data</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">C-PS</td>
+              <td class="text-left" rowspan="1" colspan="1">HPA, VPA</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">CATS Service Site</td>
+              <td class="text-left" rowspan="1" colspan="1">Node</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">CATS Service</td>
+              <td class="text-left" rowspan="1" colspan="1">Cluster</td>
+            </tr>
+          </tbody>
+        </table>
+</div>
+<p id="section-7.2-6">Note that while in Kubernetes there are multiple levels of abstraction
+to reach the Metrics API (cAdvisor -&gt; kubelet -&gt; metrics  server -&gt; API server),
+they can all be co-located in the cAdvisor, which can then be mapped to the
+C-SMA module in CATS.<a href="#section-7.2-6" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="available-metrics-from-the-kubernetes-metrics-api">
@@ -2078,7 +2123,144 @@ distributed and hybrid models also introduced in this <a href="#cats_framework" 
         <h3 id="name-available-metrics-from-the-">
 <a href="#section-7.3" class="section-number selfRef">7.3. </a><a href="#name-available-metrics-from-the-" class="section-name selfRef">Available Metrics from the Kubernetes Metrics API</a>
         </h3>
-<p id="section-7.3-1">XXX<a href="#section-7.3-1" class="pilcrow">¶</a></p>
+<p id="section-7.3-1">The Kubernetes Metrics API implementation
+can be found in staging/src/k8s.io/kubelet/pkg/apis/stats/v1alpha1/types.go
+as part of the Kubernetes repository (https://github.com/kubernetes/kubernetes):<a href="#section-7.3-1" class="pilcrow">¶</a></p>
+<p id="section-7.3-2">In this section we provide a summary of the metrics offered by the API:<a href="#section-7.3-2" class="pilcrow">¶</a></p>
+<span id="name-summary-of-the-kubernetes-m"></span><div id="kub_metrics_node">
+<table class="center" id="table-7">
+          <caption>
+<a href="#table-7" class="selfRef">Table 7</a>:
+<a href="#name-summary-of-the-kubernetes-m" class="selfRef">Summary of the Kubernetes Metric API: Node-level metrics.</a>
+          </caption>
+<thead>
+            <tr>
+              <th class="text-left" rowspan="1" colspan="1">Nodel-level metric</th>
+              <th class="text-left" rowspan="1" colspan="1">Decription</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">nodeName</td>
+              <td class="text-left" rowspan="1" colspan="1">Name of the node</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">ContainerStats</td>
+              <td class="text-left" rowspan="1" colspan="1">Stats of the containers within this node</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">CPUStats</td>
+              <td class="text-left" rowspan="1" colspan="1">Stats pertaining to CPU resources</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">MemoryStats</td>
+              <td class="text-left" rowspan="1" colspan="1">Stats pertaining to memory (RAM) resources</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">NetworkStats</td>
+              <td class="text-left" rowspan="1" colspan="1">Stats pertaining to network resources</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">FsStats</td>
+              <td class="text-left" rowspan="1" colspan="1">Stats pertaining to the filesystem resources</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">RuntimeStats</td>
+              <td class="text-left" rowspan="1" colspan="1">Stats about the underlying containers runtime</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">RlimitStats</td>
+              <td class="text-left" rowspan="1" colspan="1">Stats about the rlimits of system</td>
+            </tr>
+          </tbody>
+        </table>
+</div>
+<span id="name-summary-of-the-kubernetes-me"></span><div id="kub_metrics_pod">
+<table class="center" id="table-8">
+          <caption>
+<a href="#table-8" class="selfRef">Table 8</a>:
+<a href="#name-summary-of-the-kubernetes-me" class="selfRef">Summary of the Kubernetes Metric API: Pod-level metrics.</a>
+          </caption>
+<thead>
+            <tr>
+              <th class="text-left" rowspan="1" colspan="1">Pod-level metric</th>
+              <th class="text-left" rowspan="1" colspan="1">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">PodReference</td>
+              <td class="text-left" rowspan="1" colspan="1">Reference to the measured Pod</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">CPU</td>
+              <td class="text-left" rowspan="1" colspan="1">Stats pertaining to CPU resources consumed by pod cgroup</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Memory</td>
+              <td class="text-left" rowspan="1" colspan="1">Stats pertaining to memory (RAM) resources consumed by pod cgroup</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">NetworkStats</td>
+              <td class="text-left" rowspan="1" colspan="1">Stats pertaining to network resources</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">VolumeStats</td>
+              <td class="text-left" rowspan="1" colspan="1">Stats pertaining to volume usage of filesystem resources</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">FsStats</td>
+              <td class="text-left" rowspan="1" colspan="1">Total filesystem usage for the containers</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">ProcessStats</td>
+              <td class="text-left" rowspan="1" colspan="1">Stats pertaining to processes</td>
+            </tr>
+          </tbody>
+        </table>
+</div>
+<span id="name-summary-of-the-kubernetes-met"></span><div id="kub_metrics_container">
+<table class="center" id="table-9">
+          <caption>
+<a href="#table-9" class="selfRef">Table 9</a>:
+<a href="#name-summary-of-the-kubernetes-met" class="selfRef">Summary of the Kubernetes Metric API: Container-level metrics.</a>
+          </caption>
+<thead>
+            <tr>
+              <th class="text-left" rowspan="1" colspan="1">Container-level metric</th>
+              <th class="text-left" rowspan="1" colspan="1">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">name</td>
+              <td class="text-left" rowspan="1" colspan="1">Name of the container</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">CPUStats</td>
+              <td class="text-left" rowspan="1" colspan="1">Stats pertaining to CPU resources</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">MemoryStats</td>
+              <td class="text-left" rowspan="1" colspan="1">Stats pertaining to memory (RAM) resources</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">AcceleratorStats</td>
+              <td class="text-left" rowspan="1" colspan="1">Metrics for Accelerators (e.g., GPU, NPU, etc.)</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">FsStats</td>
+              <td class="text-left" rowspan="1" colspan="1">Stats pertaining to the container's filesystem resources</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">UserDefinedMetrics</td>
+              <td class="text-left" rowspan="1" colspan="1">User defined metrics that are exposed by containers in the pod</td>
+            </tr>
+          </tbody>
+        </table>
+</div>
+<p id="section-7.3-6">For more details, refer to https://github.com/kubernetes/kubernetes under the path
+staging/src/k8s.io/kubelet/pkg/apis/stats/v1alpha1/types.go.<a href="#section-7.3-6" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
